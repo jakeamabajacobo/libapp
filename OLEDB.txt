@@ -1,0 +1,52 @@
+Imports System.Data.OleDb
+
+
+  Private oledb_connection As New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\pc\Documents\GitHub\VB_NET_OLEDB_MSACCESS_APP\DB\inventorydb.accdb")
+
+    Private sql_string As String
+    Private oledb_command As New OleDbCommand
+    Private data_table As New DataTable
+    Private oledb_data_adapter As New OleDb.OleDbDataAdapter
+
+
+
+#READ
+     Try
+           
+                oledb_connection.Open()
+        
+            If oledb_connection.State = ConnectionState.Open Then
+
+                sql_string = "SELECT * FROM tblitems"
+                oledb_command.Connection = oledb_connection
+                oledb_command.CommandText = sql_string
+                oledb_data_adapter.SelectCommand = oledb_command
+                oledb_data_adapter.Fill(data_table)
+                dg_view_item.DataSource = data_table
+            Else
+                MessageBox.Show("Database Not Connected")
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            oledb_connection.Close()
+        End Try
+
+
+
+
+#SAVE
+   
+         Try
+            oledb_connection.Open()
+            oledb_command.Connection = db_con
+            oledb_command.CommandText = " INSERT INTO tblitems(ITEMNAME,ITEMDESCRIPTION,QTY,PRICE) VALUES ('" & txt_itemname.Text & "','" & txt_itemdescription.Text & "','" & Val(txt_qty.Text) & "','" & Val(txt_price.Text) "
+            Return oledb_command.ExecuteNonQuery
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            oledb_connection.Close()
+        End Try

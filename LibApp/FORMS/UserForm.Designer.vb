@@ -22,8 +22,16 @@ Partial Class UserForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'UserForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1122, 598)
+        Me.Name = "UserForm"
         Me.Text = "UserForm"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class
