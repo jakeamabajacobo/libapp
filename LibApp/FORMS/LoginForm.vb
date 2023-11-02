@@ -1,4 +1,6 @@
-﻿Public Class LoginForm
+﻿Imports System.Data.OleDb
+
+Public Class LoginForm
     Private Sub login_btn_Click(sender As Object, e As EventArgs) Handles login_btn.Click
         Me.Hide()
         MainForm.Show()
