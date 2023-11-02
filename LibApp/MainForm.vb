@@ -1,4 +1,7 @@
-﻿Public Class MainForm
+﻿Imports System.Data.OleDb
+
+
+Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -9,17 +12,17 @@
 
     End Sub
 
-    Private Sub books_btn_Click(sender As Object, e As EventArgs) Handles books_btn.Click, Button1.Click
+    Private Sub books_btn_Click(sender As Object, e As EventArgs) Handles books_btn.Click
         BookForm.Show()
 
     End Sub
 
-    Private Sub borrow_btn_Click(sender As Object, e As EventArgs) Handles borrow_btn.Click, Button2.Click
+    Private Sub borrow_btn_Click(sender As Object, e As EventArgs) Handles borrow_btn.Click, brw_btn.Click
         BorrowBookForm.Show()
 
     End Sub
 
-    Private Sub user_btn_Click(sender As Object, e As EventArgs) Handles user_btn.Click, Button3.Click
+    Private Sub user_btn_Click(sender As Object, e As EventArgs) Handles user_btn.Click
         UserForm.Show()
 
     End Sub

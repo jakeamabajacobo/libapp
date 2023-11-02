@@ -43,6 +43,7 @@ Partial Class LoginForm
         Me.password_txtbox.Location = New System.Drawing.Point(179, 146)
         Me.password_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.password_txtbox.Name = "password_txtbox"
+        Me.password_txtbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.password_txtbox.Size = New System.Drawing.Size(419, 26)
         Me.password_txtbox.TabIndex = 1
         '
