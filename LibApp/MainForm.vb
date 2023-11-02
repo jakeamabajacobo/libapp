@@ -17,7 +17,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub borrow_btn_Click(sender As Object, e As EventArgs) Handles borrow_btn.Click, brw_btn.Click
+    Private Sub borrow_btn_Click(sender As Object, e As EventArgs) Handles borrow_btn.Click
         BorrowBookForm.Show()
 
     End Sub

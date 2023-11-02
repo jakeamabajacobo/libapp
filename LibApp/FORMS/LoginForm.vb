@@ -24,6 +24,7 @@ Public Class LoginForm
             db_command.Connection = db_connection
             db_command.CommandText = str_qry
             db_adatper.SelectCommand = db_command
+            dt.Clear()
             db_adatper.Fill(dt)
 
 
@@ -52,9 +53,10 @@ Public Class LoginForm
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
-
         Finally
             db_connection.Close()
+            dt.Dispose()
+            db_adatper.Dispose()
 
         End Try
 
@@ -69,6 +71,10 @@ Public Class LoginForm
     Private Sub cancel_btn_Click(sender As Object, e As EventArgs) Handles cancel_btn.Click
         Me.Close()
 
+
+    End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

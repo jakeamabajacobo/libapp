@@ -27,7 +27,6 @@ Partial Class MainForm
         Me.borrow_btn = New System.Windows.Forms.Button()
         Me.user_btn = New System.Windows.Forms.Button()
         Me.logout_btn = New System.Windows.Forms.Button()
-        Me.brw_btn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'books_btn
@@ -73,23 +72,12 @@ Partial Class MainForm
         Me.logout_btn.Text = "Logout"
         Me.logout_btn.UseVisualStyleBackColor = False
         '
-        'brw_btn
-        '
-        Me.brw_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.brw_btn.Location = New System.Drawing.Point(302, 178)
-        Me.brw_btn.Name = "brw_btn"
-        Me.brw_btn.Size = New System.Drawing.Size(204, 133)
-        Me.brw_btn.TabIndex = 1
-        Me.brw_btn.Text = "Borrow"
-        Me.brw_btn.UseVisualStyleBackColor = True
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(830, 462)
         Me.Controls.Add(Me.logout_btn)
-        Me.Controls.Add(Me.brw_btn)
         Me.Controls.Add(Me.user_btn)
         Me.Controls.Add(Me.borrow_btn)
         Me.Controls.Add(Me.books_btn)
@@ -105,5 +93,4 @@ Partial Class MainForm
     Friend WithEvents borrow_btn As Button
     Friend WithEvents user_btn As Button
     Friend WithEvents logout_btn As Button
-    Friend WithEvents brw_btn As Button
 End Class

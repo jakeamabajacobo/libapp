@@ -32,6 +32,7 @@ Partial Class LoginForm
         '
         'username_txtbox
         '
+        Me.username_txtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.username_txtbox.Location = New System.Drawing.Point(179, 83)
         Me.username_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.username_txtbox.Name = "username_txtbox"
@@ -40,6 +41,7 @@ Partial Class LoginForm
         '
         'password_txtbox
         '
+        Me.password_txtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.password_txtbox.Location = New System.Drawing.Point(179, 146)
         Me.password_txtbox.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.password_txtbox.Name = "password_txtbox"
