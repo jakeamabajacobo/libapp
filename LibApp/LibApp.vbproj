@@ -137,6 +137,7 @@
     <Compile Include="FORMS\UserForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INCLUDES\UTILITY\utils.vb" />
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +209,7 @@
     </Content>
     <Content Include="INCLUDES\IMAGE\book_ico.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="INCLUDES\UTILITY\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

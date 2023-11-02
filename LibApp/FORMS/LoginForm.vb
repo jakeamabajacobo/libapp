@@ -2,31 +2,16 @@
 
 Public Class LoginForm
 
-    Private db_connection As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\git\libapp\LibApp\DB\Books97.accdb")
 
-
-    Private oledb_con As New OleDb.OleDbConnection()
+    Dim lib_util As New utils
+    Dim dt As New DataTable
 
     Private Sub login_btn_Click(sender As Object, e As EventArgs) Handles login_btn.Click
 
 
 
-        Dim str_qry As String
-        Dim db_command As New OleDbCommand
-        Dim db_adatper As New OleDbDataAdapter
-        Dim dt As New DataTable
-
-
-        str_qry = "SELECT * FROM `User_Auth` WHERE Username= '" & username_txtbox.Text & "' AND Password= '" & password_txtbox.Text & "'  "
-
         Try
-            db_connection.Open()
-            db_command.Connection = db_connection
-            db_command.CommandText = str_qry
-            db_adatper.SelectCommand = db_command
-            dt.Clear()
-            db_adatper.Fill(dt)
-
+            dt = lib_util.ExecuteFunction("SELECT * FROM `User_Auth` WHERE Username='" & username_txtbox.Text & "' AND Password= '" & password_txtbox.Text & "'")
 
             If dt.Rows.Count > 0 Then
 
@@ -53,10 +38,9 @@ Public Class LoginForm
 
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
+
         Finally
-            db_connection.Close()
-            dt.Dispose()
-            db_adatper.Dispose()
+            dt.Clear()
 
         End Try
 
