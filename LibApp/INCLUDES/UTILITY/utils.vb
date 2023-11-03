@@ -45,12 +45,12 @@ Public Class utils
             db_connection.Open()
             db_command.CommandText = str_qry
             db_command.Connection = db_connection
-            db_adapter.SelectCommand = db_command
+            '   db_adapter.SelectCommand = db_command
 
 
-            If (db_command.ExecuteNonQuery() > 0) Then
-                MsgBox("Data Saved !")
-            End If
+            '  If (db_command.ExecuteNonQuery() > 0) Then
+            MsgBox("Data Saved !")
+            ' End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         Finally

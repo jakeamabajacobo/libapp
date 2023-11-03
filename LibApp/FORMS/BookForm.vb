@@ -4,17 +4,16 @@ Public Class BookForm
 
     Dim utils As New utils
     Dim dt As New DataTable
+    Public sel_id As String
 
 
-
-    Private Sub BookForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Function IterateTable()
 
 
         Try
 
             dt = utils.ExecuteFunction("SELECT ID,Title,Description,Author,Quantity,ISBN FROM Books")
-            dt_grid.Rows.Clear()
+            ' dt_grid.Rows.Clear()
 
             dt_grid.DataSource = dt
             dt_grid.AllowUserToResizeColumns = False
@@ -34,6 +33,16 @@ Public Class BookForm
         Finally
             dt.Dispose()
         End Try
+
+    End Function
+
+    Private Sub BookForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        IterateTable()
+        dt_grid.ClearSelection()
+        dt_grid.CurrentRow.Selected = False
+
+
     End Sub
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
@@ -44,6 +53,17 @@ Public Class BookForm
     End Sub
 
     Private Sub dt_grid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_grid.CellClick
+        sel_id = dt_grid.CurrentRow.Cells(0).Value
+    End Sub
 
+    Private Sub update_btn_Click(sender As Object, e As EventArgs) Handles update_btn.Click
+        sel_id = dt_grid.CurrentRow.Cells(0).Value
+        Me.Hide()
+        UpdateBook.Show()
+        UpdateBook.populateTable(dt_grid.CurrentRow.Cells(0).Value)
+    End Sub
+
+    Private Sub dt_grid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_grid.CellContentClick
+        sel_id = dt_grid.CurrentRow.Cells(0).Value
     End Sub
 End Class
